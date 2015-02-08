@@ -53,6 +53,14 @@ Formulae may also be enclosed within `<span class="tex"></span>` tags and render
 </script>
 ```
 
+Alternatively, the `<tex></tex>` shorthand may be used:
+
+```html
+<tex>
+    q^n = \sum_{d|n} dN_d
+</tex>
+```
+
 This approach also supports `\displaystyle` and block style rendering through the use of the `tex-displaystyle` and `tex-block` classes, respectively.
 
 ## Contributing

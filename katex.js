@@ -47,8 +47,31 @@ var renderToString = function(toParse) {
     return buildTree(tree).toMarkup();
 };
 
+/**
+ * Render all <keq> elements.
+ */
+var renderAll = function(toParse) {
+    var keqElements = document.getElementsByTagName("keq");
+    for (var i = 0; i < keqElements.length; i++) {
+        var element = keqElements[i];
+        var equation = element.textContent;
+        if (element.getAttribute("data-displaystyle") !== null ||
+            element.getAttribute("data-block") !== null) {
+            equation = "\\displaystyle{" + equation + "}" ;
+        }
+
+        try {
+            var rendered = renderToString(equation);
+            element.innerHTML = rendered;
+        } catch (e) {
+            console.log(e);
+        }
+    }
+};
+
 module.exports = {
     render: render,
     renderToString: renderToString,
+    renderAll: renderAll,
     ParseError: ParseError
 };

@@ -54,14 +54,14 @@ var renderAll = function(toParse) {
     var keqElements = document.getElementsByTagName("keq");
     for (var i = 0; i < keqElements.length; i++) {
         var element = keqElements[i];
-        var equation = element.textContent;
+        var formula = element.textContent;
         if (element.classList.contains("keq-displaystyle") ||
             element.classList.contains("keq-block")) {
-            equation = "\\displaystyle{" + equation + "}" ;
+            formula = "\\displaystyle{" + formula + "}" ;
         }
 
         try {
-            var rendered = renderToString(equation);
+            var rendered = renderToString(formula);
             element.innerHTML = rendered;
         } catch (e) {
             console.log(e);

@@ -50,14 +50,17 @@ var renderToString = function(toParse) {
 /**
  * Render all span.keq elements.
  */
-var renderAll = function(toParse) {
-    var keqElements = document.getElementsByClassName("keq");
-    for (var i = 0; i < keqElements.length; i++) {
-        var element = keqElements[i];
+var renderAll = function() {
+    var texClassElements = [].slice.call(document.getElementsByClassName("tex"));
+    var texTagElements = [].slice.call(document.getElementsByTagName("tex"));
+    var texElements = texClassElements.concat(texTagElements);
+    texElements.forEach(function (element) {
         var formula = element.textContent;
-        if (element.classList.contains("keq-displaystyle") ||
-            element.classList.contains("keq-block")) {
-            formula = "\\displaystyle{" + formula + "}" ;
+        if (element.classList !== undefined) {
+            if (element.classList.contains("tex-displaystyle") ||
+                element.classList.contains("tex-block")) {
+                formula = "\\displaystyle{" + formula + "}" ;
+            }
         }
 
         try {
@@ -66,7 +69,7 @@ var renderAll = function(toParse) {
         } catch (e) {
             console.log(e);
         }
-    }
+    });
 };
 
 module.exports = {

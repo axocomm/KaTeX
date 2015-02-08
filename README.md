@@ -41,10 +41,10 @@ katex.render("\\displaystyle {" + formula + "}", element);
 var html = katex.renderToString("\\displaystyle {" + formula + "}");
 ```
 
-Formulae may also be enclosed within `<span class="keq"></span>` tags and rendered with the `renderAll` function as follows:
+Formulae may also be enclosed within `<span class="tex"></span>` tags and rendered with the `renderAll` function as follows:
 
 ```html
-<span class="keq">
+<span class="tex">
     \lim_{x\to\infty}\frac{\pi(x)}{x/\ln(x)} = 1
 </span>
 <!-- ... -->
@@ -53,7 +53,7 @@ Formulae may also be enclosed within `<span class="keq"></span>` tags and render
 </script>
 ```
 
-This approach also supports `\displaystyle` and block style rendering through the use of the `keq-displaystyle` and `keq-block` classes, respectively.
+This approach also supports `\displaystyle` and block style rendering through the use of the `tex-displaystyle` and `tex-block` classes, respectively.
 
 ## Contributing
 

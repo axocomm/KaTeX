@@ -48,7 +48,7 @@ var renderToString = function(toParse) {
 };
 
 /**
- * Render all span.keq elements.
+ * Render all <tex> and .tex elements.
  */
 var renderAll = function() {
     var texClassElements = [].slice.call(document.getElementsByClassName("tex"));

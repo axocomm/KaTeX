@@ -41,6 +41,20 @@ katex.render("\\displaystyle {" + formula + "}", element);
 var html = katex.renderToString("\\displaystyle {" + formula + "}");
 ```
 
+Formulae may also be enclosed within `<keq></keq>` tags and rendered with the `renderAll` function as follows:
+
+```html
+<keq>
+    \lim_{x\to\infty}\frac{\pi(x)}{x/\ln(x)} = 1
+</keq>
+<!-- ... -->
+<script>
+    katex.renderAll();
+</script>
+```
+
+This approach also supports `\displaystyle` and block style rendering through the use of the `keq-displaystyle` and `keq-block` classes, respectively.
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)

@@ -55,8 +55,8 @@ var renderAll = function(toParse) {
     for (var i = 0; i < keqElements.length; i++) {
         var element = keqElements[i];
         var equation = element.textContent;
-        if (element.getAttribute("data-displaystyle") !== null ||
-            element.getAttribute("data-block") !== null) {
+        if (element.classList.contains("keq-displaystyle") ||
+            element.classList.contains("keq-block")) {
             equation = "\\displaystyle{" + equation + "}" ;
         }
 

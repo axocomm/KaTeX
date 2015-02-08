@@ -48,10 +48,10 @@ var renderToString = function(toParse) {
 };
 
 /**
- * Render all <keq> elements.
+ * Render all span.keq elements.
  */
 var renderAll = function(toParse) {
-    var keqElements = document.getElementsByTagName("keq");
+    var keqElements = document.getElementsByClassName("keq");
     for (var i = 0; i < keqElements.length; i++) {
         var element = keqElements[i];
         var formula = element.textContent;

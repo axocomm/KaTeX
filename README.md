@@ -44,9 +44,9 @@ var html = katex.renderToString("\\displaystyle {" + formula + "}");
 Formulae may also be enclosed within `<keq></keq>` tags and rendered with the `renderAll` function as follows:
 
 ```html
-<keq>
+<span class="keq">
     \lim_{x\to\infty}\frac{\pi(x)}{x/\ln(x)} = 1
-</keq>
+</span>
 <!-- ... -->
 <script>
     katex.renderAll();

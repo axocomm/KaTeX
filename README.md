@@ -41,7 +41,7 @@ katex.render("\\displaystyle {" + formula + "}", element);
 var html = katex.renderToString("\\displaystyle {" + formula + "}");
 ```
 
-Formulae may also be enclosed within `<keq></keq>` tags and rendered with the `renderAll` function as follows:
+Formulae may also be enclosed within `<span class="keq"></span>` tags and rendered with the `renderAll` function as follows:
 
 ```html
 <span class="keq">
